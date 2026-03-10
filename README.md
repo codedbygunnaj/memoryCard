@@ -1,16 +1,54 @@
-# React + Vite
+📘 Memory Card Game (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Pokémon Memory Card Game built with React and deployed on Netlify.
 
-Currently, two official plugins are available:
+👉 Live Demo: https://eloquent-zabaione-3af815.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
+React Functional Components: modular design with App.jsx and ItemCard.jsx.
 
-## React Compiler
+Hooks:
+1. useState → for score tracking, best score, clicked memory, and card shuffling.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. useEffect → for fetching Pokémon data from API.
 
-## Expanding the ESLint configuration
+3. API Integration — uses PokeAPI to fetch Pokémon names and sprites dynamically.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Game Logic:
+
+1. Click a card → increases score if not clicked before.
+2. Clicking the same card twice → resets score.
+3. Cards shuffle after every click.
+4. Best score is tracked across rounds.
+
+Styling:
+- CSS Grid for layout (4×3 board).
+- Custom fonts, hover effects, and responsive design.
+
+🛠️ Tech Stack
+
+- React (Vite) : fast development and build tool.
+- JavaScript (ES6+) : functional programming style.
+- CSS Grid & Flexbox : responsive layout and polish.
+- Netlify : deployment and hosting.
+
+🎮 How to Play
+1. Click on a Pokémon card.
+2. Don’t click the same Pokémon twice!
+3. Each unique click increases your score.
+4. Cards shuffle after every click.
+5. Try to beat your Best Score.
+
+📖 Learning Outcomes
+This project was built as a learning exercise to practice:
+- React fundamentals (components, props).
+- State management with useState.
+- Side effects and data fetching with useEffect.
+- API integration and JSON parsing.
+- Event handling (onClick) and lifting state up.
+- CSS Grid for multi‑card layout.
+- Deployment workflows (Netlify).
+
+🌐 Deployment
+Built with npm run build → output in dist/.
+Deployed on Netlify with publish directory set to dist.
