@@ -1,0 +1,18 @@
+body{
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #00fff7cc, #8ec5fc);
+}
+
+.arrangePokes{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;    
+  margin: 20px auto;      
+  max-width: 1500px; 
+}
+
+.scoreClass{
+  text-align: right;
+}

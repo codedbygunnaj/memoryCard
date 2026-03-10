@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'MyCurlyFont';
+    src: url('path/to/your/curlyfont.woff2') format('woff2'),
+         url('path/to/your/curlyfont.woff') format('woff');
+}
+
+.itemCards {
+  border: 2px solid wheat;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center image + text horizontally */
+  justify-content: center;   /* center vertically */
+  background-color: rgba(8, 205, 8, 0.914);
+  margin: 5px;
+  padding: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+.itemCards:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease;
+}
+
+.itemImg {
+  cursor: pointer;
+  height: 250px;
+  width: 250px;
+  transition: transform 0.3s ease; /* smooth zoom */
+}
+
+.itemImg:hover {
+  transform: scale(1.1);
+}
+
+.itemH3 {
+  font-family: 'MyCurlyFont', cursive;
+  font-weight: bolder;
+  text-align: center;        
+  margin-top: 10px;
+}
+
+ 
