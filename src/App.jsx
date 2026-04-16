@@ -57,8 +57,8 @@ export default function App(){
             </ul>
             <p className="challenge-text">The developer's high score is <strong>10</strong>. Are you sharp enough to beat it? 😈</p>
           </div>
-          <button className="start-btn" onClick={() => setGameStarted(true)}>
-            START ADVENTURE 🚀
+          <button className="start-btn-vibe" onClick={() => setGameStarted(true)}>
+            GOTTA CATCH 'EM ALL! ⚡
           </button>
         </div>
       </div>

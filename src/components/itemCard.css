@@ -5,39 +5,41 @@
 }
 
 .itemCards {
-  border: 2px solid wheat;
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* center image + text horizontally */
-  justify-content: center;   /* center vertically */
-  background-color: rgba(8, 205, 8, 0.914);
-  margin: 5px;
-  padding: 10px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+  background: white;
+  border: 4px solid #3b4cca;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 190px;
 }
 
+/* The card "pops" out at you */
 .itemCards:hover {
-  transform: translateY(-5px);
-  transition: transform 0.2s ease;
+  transform: translateY(-15px) rotate(2deg);
+  border-color: #ffde00;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
 .itemImg {
-  cursor: pointer;
-  height: 250px;
-  width: 250px;
-  transition: transform 0.3s ease; /* smooth zoom */
+  height: 120px;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
 }
 
-.itemImg:hover {
-  transform: scale(1.1);
+.itemCards:hover .itemImg {
+  transform: scale(1.2) rotate(-5deg);
 }
 
 .itemH3 {
-  font-family: 'MyCurlyFont', cursive;
-  font-weight: bolder;
-  text-align: center;        
   margin-top: 10px;
+  font-family: 'MyCurlyFont', cursive;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #3b4cca;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
- 
