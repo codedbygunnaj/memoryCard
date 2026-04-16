@@ -2,7 +2,7 @@
 
 A simple Pokémon Memory Card Game built with React and deployed on Netlify.
 
-👉 Live Demo: https://eloquent-zabaione-3af815.netlify.app/
+👉 Live Demo: https://memorychecker.netlify.app/
 
 🚀 Features
 React Functional Components: modular design with App.jsx and ItemCard.jsx.
