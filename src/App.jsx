@@ -22,11 +22,11 @@ export default function App(){
   const [maxScore, setMax] = useState(0);
   const [clicked, setClicked] = useState([]); 
   const [cards, setCards] = useState(pokemonUrls); 
-  const [gameStarted, setGameStarted] = useState(false); // New state for homepage
+  const [gameStarted, setGameStarted] = useState(false);
 
   function handleClick(name){
     if(clicked.includes(name)){
-      alert("HAAR GYE! 😭 Same card repeat kar diya... let's see if you can beat my score of 10!");
+      alert("Game Over! 😭 You clicked the same card twice. My top score is 10—think you can beat it next time?");
       setScore(0);
       setClicked([]);
     } else {
@@ -36,40 +36,43 @@ export default function App(){
       setClicked([...clicked, name]);
       
       if(newScore === 12) {
-        alert("CHAK DE PHATTE! 🎉 12/12 Pokemons collected! You are a legend! HEHEH");
+        alert("PERFECT VICTORY! 🎉 You collected all 12 Pokémons without a single mistake. You're a Memory Master!");
       }
     }
     setCards([...cards].sort(() => Math.random() - 0.5));
   }
 
-  // --- Homepage Component ---
   if (!gameStarted) {
     return (
-      <div className="homepage-container">
-        <h1>Welcome to Poké-Memory! ⚡</h1>
-        <div className="rules-box">
-          <h3>📜 The Rules:</h3>
-          <ul>
-            <li>Click on a card to collect that Pokémon.</li>
-            <li>Don't click the same Pokémon twice, warna <strong>HAAR GYE</strong>!</li>
-            <li>Cards shuffle every time you click. Stay sharp!</li>
-            <li>Can you collect all 12? Join me and let's see! HEHEH 😈</li>
-          </ul>
-          <p className="challenge-text">My high score is <strong>10</strong>. Kya tum mujhe hara sakte ho? 😎</p>
+      <div className="homepage-wrapper">
+        <div className="homepage-container">
+          <h1>Poké-Memory Challenge ⚡</h1>
+          <div className="rules-box">
+            <h3>📜 Game Rules</h3>
+            <ul>
+              <li>Click each Pokémon card <strong>only once</strong>.</li>
+              <li>If you click the same card twice, <strong>the game resets!</strong> ❌</li>
+              <li>The cards shuffle after every click, so watch closely.</li>
+              <li>There are 12 unique Pokémons to collect. Can you get them all?</li>
+            </ul>
+            <p className="challenge-text">The developer's high score is <strong>10</strong>. Are you sharp enough to beat it? 😈</p>
+          </div>
+          <button className="start-btn" onClick={() => setGameStarted(true)}>
+            START ADVENTURE 🚀
+          </button>
         </div>
-        <button className="start-btn" onClick={() => setGameStarted(true)}>
-          LET'S GO! 🚀
-        </button>
       </div>
     );
   }
 
-  // --- Actual Game View ---
   return (
-    <div>
+    <div className="game-screen">
       <div className="game-header">
         <button className="back-btn" onClick={() => {setGameStarted(false); setScore(0); setClicked([]);}}>🏠 Home</button>
-        <p className="scoreClass">Score: {score} | Best: {maxScore}</p>  
+        <div className="score-board">
+          <p className="scoreClass">Current Score: {score}</p>
+          <p className="bestScoreClass">Best Score: {maxScore}</p>
+        </div>
       </div>
       <div className="arrangePokes">
         { cards.map((p)=>(
